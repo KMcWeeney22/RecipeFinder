@@ -14,11 +14,10 @@
 
       <div ng-if="searchQuery">
         <p class="lead">{{recipesFound.count}} recipes found matching the search: {{searchQuery}}</p>
-        <dl ng-repeat="recipe in recipesFound.hits">
-          <dt>{{recipe.label}}</dt>
-          <img ng-src="{{recipesFound.hits.recipe.image}}"/>
-          <dd>{{recipesFound.recipe.ingredients[0]}}</dd>
-          <dd><a ng-href="#/current/{{recipe.uri}}" class="btn btn-lg btn-primary">View Recipe</a></dd>
+        <dl ng-repeat="hit in recipesFound.hits">
+          <dt>{{hit.recipe.label}}</dt>
+          <img ng-src="{{hit.recipe.image}}"/>
+          <dd><a ng-href="{{hit.recipe.url}}" class="btn btn-lg btn-primary">View Recipe</a></dd>
         </dl>
     </div>
   </p>
