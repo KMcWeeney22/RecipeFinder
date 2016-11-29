@@ -13,7 +13,7 @@ angular.module('recipeFinderApp')
     // ...
 
     // Public Api here
-    return $resource('https://crossorigin.me/https://api.edamam.com/search?q=:query&app_id=b6292421&app_key=1ed9c7d45bb47dfcf6fda4645b370387', {}, {
+    return $resource('https://api.edamam.com/search?q=:query&app_id=b6292421&app_key=1ed9c7d45bb47dfcf6fda4645b370387', {}, {
       search:{
         method: 'GET',
         params:{
