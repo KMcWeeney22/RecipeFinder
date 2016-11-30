@@ -8,17 +8,17 @@
           </label>
         </p>
         <p>
-          <button class="btn btn-lg btn-primary" ng-click="findRecipes()">Find Recipes</button>
+          <button class="btn btn-md btn-primary" ng-click="findRecipes()">Find Recipes</button>
         </p>
       </div>
 
       <div ng-if="searchQuery">
-        <p class="lead">{{recipesFound.count}} recipes found matching the search: {{searchQuery}}</p>
-        <dl ng-repeat="hit in recipesFound.hits">
+        <p class="lead">Recipes found matching the search: {{searchQuery}}</p>
+        <dl ng-repeat="hit in recipesFound.hits" class="recipe-results">
           <dt>{{hit.recipe.label}}</dt>
           <img ng-src="{{hit.recipe.image}}"/>
-          <dd><a ng-href="{{hit.recipe.url}}" class="btn btn-lg btn-primary">View Recipe</a></dd>
+          <dd><a ng-href="{{hit.recipe.url}}" class="btn btn-lg btn-primary" class="view-recipe">View Recipe</a></dd>
         </dl>
-    </div>
+      </div>
   </p>
 </div>

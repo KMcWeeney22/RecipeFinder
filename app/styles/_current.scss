@@ -1,7 +1,21 @@
 .recipe-results {
+  min-width: 200px;
+  min-height: 200px;
+  max-width: 200px;
+  max-height: 200px;
+  display: inline-block;
+  margin: 20px;
+  margin-bottom: 40px;
+
   img{
     max-width: 150px;
     max-height: 150px;
-    border-radius: 30px;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .view-recipe {
+    margin-bottom: 30px;
   }
 }
