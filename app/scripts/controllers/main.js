@@ -8,13 +8,14 @@
  * Controller of the recipeFinderApp
  */
 angular.module('recipeFinderApp')
-  .controller('MainCtrl', function ($scope, recipesearch) {
-    $scope.recipesFound = recipesearch.search();
+  .controller('MainCtrl', function ($scope, recipesearch, $localStorage) {
+    $scope.recipesFound = recipesearch.recipes();
 
     $scope.findRecipes = function(){
-    $scope.recipesFound = recipesearch.search({
+    $scope.recipesFound = recipesearch.recipes({
         query: $scope.recipe
     });
     $scope.searchQuery = $scope.recipe;
   };
+
   });

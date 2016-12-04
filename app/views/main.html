@@ -1,24 +1,25 @@
 <div ng-app class="jumbotron" ng-controller="MainCtrl">
   <h1>Search for Recipes</h1>
   <p class="lead">
-    <div ng-init="recipe='Lasagna'">
+    <div ng-init="recipe='Carbonara'">
         <p>
-          <label for="recipes">Recipe:
+          <label for="recipe">Recipe:
             <input type="text" name="recipe" ng-model="recipe">
           </label>
         </p>
         <p>
           <button class="btn btn-md btn-primary" ng-click="findRecipes()">Find Recipes</button>
         </p>
-      </div>
+    </div>
 
-      <div ng-if="searchQuery">
-        <p class="lead">Recipes found matching the search: {{searchQuery}}</p>
-        <dl ng-repeat="hit in recipesFound.hits" class="recipe-results">
-          <dt>{{hit.recipe.label}}</dt>
-          <img ng-src="{{hit.recipe.image}}"/>
-          <dd><a ng-href="{{hit.recipe.url}}" class="btn btn-lg btn-primary" class="view-recipe">View Recipe</a></dd>
+    <div ng-if="searchQuery">
+        <p class="lead">{{recipesFound.totalMatchCount}} Recipes found matching the search: {{searchQuery}}</p>
+        <dl ng-repeat="recipe in recipesFound.matches" class="recipe-results">
+          <dt>{{recipe.recipeName}}</dt>
+          <dt></dt>
+          <img ng-src="{{recipe.smallImageUrls[0]}}"/>
+          <dd><a ng-href="http://www.yummly.co/recipe/{{recipe.id}}" class="btn btn-lg btn-primary ng-binding" class="view-recipe">View Recipe</a></dd>
         </dl>
-      </div>
+    </div>
   </p>
 </div>
